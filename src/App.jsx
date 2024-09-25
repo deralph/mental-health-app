@@ -1,35 +1,25 @@
 import React from "react";
 import Chat from "./components/chat";
 
-function UploadPDF() {
-  // useEffect(() => {
-  //   const get_user_id = () => localStorage.getItem("user_id");
-  //   const resetSession = async () => {
-  //     try {
-  //       const url = "https://rag-app-rwei.onrender.com/end_session";
-  //       // const testUrl = "http://127.0.0.1:5000/end_session";
-
-  //       if (!get_user_id()) {
-  //         const newUserId = Math.round(Date.now() * Math.random());
-  //         localStorage.setItem("user_id", newUserId);
-  //       }
-
-  //       const result = await axios.post(url, {
-  //         user_id: get_user_id(),
-  //       });
-  //       console.log(result.data.status);
-  //       setUploadStatus(" ");
-  //       console.log(" user_id generated:", get_user_id());
-  //     } catch (error) {
-  //       console.error("Error resetting session:", error);
-  //       // setResponse("Failed to reset session");
-  //     }
-  //   };
-
-  //   resetSession();
-  // }, []);
-
-  return <Chat />;
+function App() {
+  return (
+    <section style={{ height: "100vh" }}>
+      <navbar style={{ width: "100%", display: "fixed" }}>
+        <p
+          style={{
+            color: "#1e42af",
+            fontFamily: "sans-serif",
+            fontWeight: 700,
+            fontSize: "30px",
+            padding: "20px 40px",
+          }}
+        >
+          Therapeutic.
+        </p>
+      </navbar>
+      <Chat />
+    </section>
+  );
 }
 
-export default UploadPDF;
+export default App;

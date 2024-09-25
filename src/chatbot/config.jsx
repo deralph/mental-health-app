@@ -3,7 +3,7 @@ import { createChatBotMessage } from "react-chatbot-kit";
 
 import BotAvatar from "../components/botAvatar";
 import Loader from "../components/loader";
-import TherapyForm from "../login/form-index";
+import TherapyForm from "../login";
 
 const config = {
   initialMessages: [

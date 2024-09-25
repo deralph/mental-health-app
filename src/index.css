@@ -68,7 +68,7 @@
 }
 .react-chatbot-kit-chat-btn-send svg {
   /* font-size: 12px; */
-  transform: scale(0.8);
+  transform: scale(0.6);
   fill: blue;
 }
 .react-chatbot-kit-chat-bot-message {

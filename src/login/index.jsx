@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css"; // Import a CSS file for styling
 
-const TherapyForm = () => {
+const TherapyForm = (props) => {
   const [formData, setFormData] = useState({
     therapyReason: "",
     beenToTherapy: "",
@@ -22,6 +22,17 @@ const TherapyForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+
+    const formattedString = `
+      What brings you to therapy now? {${formData.therapyReason}},
+      Have you been to therapy before? {${formData.beenToTherapy}},
+      How old are you? {${formData.age}},
+      On a scale of 1 to 10, how would you rate your current stress level? {${formData.stressLevel}},
+      What is your current occupation? {${formData.occupation}},
+      What are your goals for therapy? {${formData.therapyGoals}},
+      What significant life events have you experienced recently? {${formData.significantEvents}}`;
+
+    props.actionProvider.handleAskQuestion(formattedString);
     // Submit form data to the backend or handle it as needed
   };
 
