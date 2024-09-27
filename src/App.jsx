@@ -4,7 +4,7 @@ import Chat from "./components/chat";
 function App() {
   return (
     <section style={{ height: "100vh" }}>
-      <navbar style={{ width: "100%", display: "fixed" }}>
+      <nav style={{ width: "100%", display: "fixed" }}>
         <p
           style={{
             color: "#1e42af",
@@ -16,7 +16,7 @@ function App() {
         >
           Therapeutic.
         </p>
-      </navbar>
+      </nav>
       <Chat />
     </section>
   );

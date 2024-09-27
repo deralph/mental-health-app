@@ -19,7 +19,6 @@ CORS(app)
 load_dotenv()
 
 @app.route('/chat', methods=['POST'])
-@cross_origin(origin='*')
 def chat():
     # Set your Hugging Face API token and Pinecone API key (replace with actual tokens/keys)
     huggingfacehub_api_token = os.getenv('huggingfacehub_api_token')
@@ -105,4 +104,4 @@ Response: Answer the client's question empathetically, based on the context prov
     return jsonify({'response': response})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001, use_reloader=False )
+    app.run(debug=True, port=5001, use_reloader=False)

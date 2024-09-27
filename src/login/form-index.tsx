@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css"; // Import a CSS file for styling
 
-const TherapyForm = (props) => {
+const TherapyForm = ({ onSubmitForm }) => {
   const [formData, setFormData] = useState({
     fullname:"",
     therapyReason: "",
@@ -22,8 +22,8 @@ const TherapyForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
 
+    // Create the string based on the form data
     const formattedString = `
       My name is {${formData.fullname}},
       What brings you to therapy now? {${formData.therapyReason}},
@@ -34,30 +34,30 @@ const TherapyForm = (props) => {
       What are your goals for therapy? {${formData.therapyGoals}},
       What significant life events have you experienced recently? {${formData.significantEvents}}`;
 
-    props.actionProvider.handleAskQuestion(formattedString);
-    // Submit form data to the backend or handle it as needed
-    console.log(formattedString)
-  };
+    // Pass the string to the parent component or chatbot
+    onSubmitForm(formattedString);
 
+    // Optionally log it for debugging
+    console.log(formattedString);
+  };
 
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="therapy-form">
         <h2>Therapy Intake Form</h2>
 
-
         <div className="form-group">
           <label>What is your name?</label>
           <input
             type="text"
-            name="fullname"
+            name="therapyReason"
             value={formData.fullname}
             onChange={handleChange}
             placeholder="Enter your full name"
             required
           />
         </div>
-
+        
         <div className="form-group">
           <label>What brings you to therapy now?</label>
           <input
@@ -153,7 +153,7 @@ const TherapyForm = (props) => {
           <button type="button" className="skip-btn">
             Skip
           </button>
-          <button type="submit" onClick={(e)=>handleSubmit(e)} className="submit-btn">
+          <button type="submit" className="submit-btn">
             Submit
           </button>
         </div>

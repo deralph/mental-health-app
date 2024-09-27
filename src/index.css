@@ -40,9 +40,9 @@
 .react-chatbot-kit-chat-bot-message-container {
   display: flex;
 }
-.react-chatbot-kit-chat-input-container {
-  /* width: 100%; */
-}
+/* .react-chatbot-kit-chat-input-container {
+   width: 100%; 
+} */
 .react-chatbot-kit-chat-input-form {
   display: flex;
   justify-content: space-between !important;
@@ -68,7 +68,7 @@
 }
 .react-chatbot-kit-chat-btn-send svg {
   /* font-size: 12px; */
-  transform: scale(0.6);
+  transform: scale(0.8);
   fill: blue;
 }
 .react-chatbot-kit-chat-bot-message {
@@ -99,6 +99,6 @@
   text-align: justify;
   margin: 20px 0;
 }
-.react-chatbot-kit-user-avatar-container {
-  /* display: none !important; */
-}
+/* .react-chatbot-kit-user-avatar-container {
+   display: none !important; 
+} */
